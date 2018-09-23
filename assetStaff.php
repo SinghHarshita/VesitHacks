@@ -17,6 +17,16 @@
 				$("#track").html(data);
 			});
 		});
+		$("#btn3").click(function(){
+			$.get("manage.php", function(data, status){
+				$("#track").html(data);
+			});
+		});
+		$("#btn2").click(function(){
+			$.get("transfer.php", function(data, status){
+				$("#track").html(data);
+			});
+		});
 	});
 </script>
 </head>
