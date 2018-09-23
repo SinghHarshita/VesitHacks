@@ -43,27 +43,51 @@
 
 
 
-
+<!DOCTYPE html>
 <html>
 	<head>
-		<script>
-			
+		<script type="text/javascript">
+			function checkEmail() {
+
+		    var email = document.getElementById('txtEmail');
+		    var filter= /^([a-zA-Z0-9_\-\.])+\@ves.ac.in$/;
+		    var messageDisplay=document.querySelector("#message");
+
+		    if (!filter.test(email.value)) {
+		    messageDisplay.textcontent="Enter a valid VES Email-ID."
+		    email.focus;
+		    return false;
+ }
+}
 		</script>
 	</head>
 	<body>
 		<p>All Fileds are Mandatory....</p><br><br>
 		<form action="" method="post" enctype="multipart/form-data">
-			<label>Email-ID:</label><br>
-			<input type="text" name="email_id" value="" required /><br><br>
-			<label>Name:</label><br>
-			<input type="text" name="name" value="" pattern="[a-zA-Z]{3,}" required /><br><br>
-			<label>Designation:</label><br>
-			<input type="text" name="designation" value="" pattern="[a-zA-Z]{1,}" required /><br><br>
-			<label>Dept Name:</label><br>
-			<input type="text" name="dept_name" value="" required /><br><br>
-			<label>Password:</label><br>
-			<input type="password" name="pwd" value="" required /><br><br>
-			<input type="submit" name="submit" value="Submit" />
+			<label for="email">Email-ID:</label><br>
+			<input type="text" id="email" name="email_id" value="" required />
+			<span id="message"></span><br><br>
+
+			<label for="name">Name:</label><br>
+			<input type="text" id="name" name="name" value="" pattern="[a-zA-Z]{3,}" required /><br><br>
+
+			<label for="desig">Designation:</label><br>
+			<select id="desig" name="designation">
+				<option value="staff">Staff</option>
+				<option value="nonTeachingStaff">Non-teaching Staff</option>
+				<option value="dpo">Department Purchase Officer</option>
+				<option value="po">Purchase Officer</option>
+				<option value="hod">HOD</option>
+				<option value="principal">Principal</option>
+			</select>
+			 
+			<label for="deptname">Dept Name:</label><br>
+			<input type="text" id="deptname" name="dept_name" value="" required /><br><br>
+
+			<label for="password">Password:</label><br>
+			<input type="password" id="password" name="pwd" value="" required /><br><br>
+			
+			<input type="submit" name="submit" value="Submit" onclick='Javascript:checkEmail();'/>
 		</form>
 	</body>
 </html>

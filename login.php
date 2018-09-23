@@ -32,20 +32,45 @@
 	
 
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Login Page</title>
 	<link rel="stylesheet" href="style.css"/>
+	<script type="text/javascript">
+		<script type="text/javascript">
+		
+		function checkEmail() {
+
+	    var email = document.getElementById("email");
+	    var filter= /^([a-zA-Z0-9_\-\.])+\@ves.ac.in$/;
+	    var messageDisplay=document.querySelector("#message");
+
+	    if (!filter.test(email.value)) {
+	    // alert('Please provide a VES email address');
+	    messageDisplay.textContent="Please enter a valid VES Email-ID.";
+	    email.textContent=" ";	
+	    email.focus;
+	    return false;
+ 		}
+		else{
+		 	messageDisplay.textContent="";
+		 }
+		}	
+	</script>
 </head>
 <body id="bod">
 
 <form action="" id="frm" method="post">
-		<label>Email-ID:</label>
-		<input type="text" id="tex1" name="username" value="" required/><br><br>
-		<label>Password:</label>
-		<input type="password" id="pass" name="password" value="" required/><br><br>
-		<input type="submit" id="btn" name="submit" value="Login"/>
+		<label for="email">Email-ID:</label>
+		<input type="text" id="email" name="email" value="" required/>
+		<span id="message"></span><br>
+		
+		<label for="password">Password:</label><br>
+		<input type="password" id="password" name="pwd" value="" required /><br><br>
+
+		<input type="submit" name="submit" value="Submit" onclick='Javascript:checkEmail();'/>
+
 		<label>New User:</label>&nbsp&nbsp<a href="register.php">Register</a>
 </form>
 
