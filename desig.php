@@ -70,6 +70,19 @@ h1{
 	padding-top: 10px;
 }
 </style>
+
+<script>
+
+	$("#demand").click(function(){
+			var productname = $("#inputProductName").val();
+			var numberProduct = $("#productQuantity").val();
+			$.post("demand.php", {product: productname,
+				number: numberProduct
+			});
+		});
+
+</script>
+
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -100,9 +113,9 @@ h1{
 
 <div class="sidenav">
   <a href="#" data-target="#loginModal" data-toggle="modal">Make Demand</a>
-  <a href="#" data-target=" " data-toggle="">Track Indent</a>
+  <a href="#" data-target="" data-toggle="">Track Indent</a>
   <a href="#">Transfer Asset</a>
-  <a href="#" data-target="#maintenance" data-toggle="modal">Maintence</a>
+  <a href="#" data-target="#maintenance" data-toggle="modal">Maintenance</a>
 </div>
 
 <div class="main">
@@ -133,7 +146,7 @@ h1{
 								</form>
 							</div>
 							<div class="modal-footer">
-								<button class="btn btn-primary">Submit</button>
+								<button class="btn btn-primary" id="demand" >Submit</button>
 								<button class="btn btn-primary" data-dismiss="modal">Close</button>
 							</div>						
 						</div>
@@ -152,7 +165,7 @@ h1{
 						<div class="modal-content">
 							<div class="modal-header">
 								<button class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Login</h4> 
+								<h4 class="modal-title">Maintenance</h4> 
 							</div>
 							<div class="modal-body">
 								<form>
