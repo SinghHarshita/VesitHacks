@@ -7,7 +7,7 @@
 	{
 		$us = $_POST['username'];
 		$pass = $_POST['password'];
-		$qur = "SELECT * from users where email_id = '$us' and password = '$pass'";
+		$qur = "SELECT * from employee where Email_id = '$us' and Password = '$pass'";
 		$result = mysqli_query($ser,$qur);
 		if($result)
 		{
