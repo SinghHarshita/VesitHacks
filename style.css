@@ -1,0 +1,42 @@
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+	.navbar-default
+	{
+		
+		text-transform:uppercase;
+		background-color:default;
+	}
+	
+	.main
+	{
+		background-image:url('#');
+		background-size:120%;
+		background-position:centre;
+		background-repeat:no-repeat;
+	}
+	
+	.navbar-nav
+	{
+		
+		color: #000000;
+	}
+	
+	.icon-bar
+	{
+		background: #000000;
+	}
+	
+	.text
+	{
+		text-align: centre;
+		color: #0000ff;
+		font-size: 55px;
+		margin-top: 250px;
+		margin-left: 300px;
+		font-family: 'lato' , sans-serif;
+		
+		
+			
+	}
+	
+		
