@@ -7,7 +7,7 @@
 		die("Connection failed!");
 	} 
 	
-	$sql = "SELECT id FROM employee WHERE Email_id='$us'";
+	$sql = "SELECT id FROM employee WHERE Email_id='$username'";
 	
 	$result = $connection->query($sql);
 	
