@@ -57,8 +57,32 @@ $(document).ready(function(){
 		
 	});
 });
+
+function checkEmail() {
+
+      var email = document.getElementById("inputEmail");
+      var filter= /^([a-zA-Z0-9_\-\.])+\@ves.ac.in$/;
+      var messageDisplay=document.querySelector("#message");
+
+      if (!filter.test(email.value)) {
+      // alert('Please provide a VES email address');
+      messageDisplay.textContent="Please enter a valid VES Email-ID.";
+      email.textContent=" ";  
+      email.focus;
+      return false;
+ }
+     else{
+      messageDisplay.textContent="";
+     }
+}
 	
 </script>
+
+<style type="text/css">
+  #message{
+    color: red;
+  }
+</style>
 
 </head>
 
@@ -120,6 +144,7 @@ $(document).ready(function(){
                     <label for="inputEmail">Email</label>
                     <input class="form-control" placeholder="Login Email" type="text" id="inputEmail" name="Email" required="true" autocomplete="on">
                   </div>
+                  <span id="message"></span>
                   <div class="form-group">
                     <label for="inputUsername">Username</label>
                     <input type="text" id="inputUsername" placeholder="Login Username" class="form-control" name="Username" required="true" autocomplete="off">

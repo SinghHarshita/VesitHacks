@@ -21,8 +21,31 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 <script>
+  
+     function checkEmail() {
 
+      var email = document.getElementById("inputEmail");
+      var filter= /^([a-zA-Z0-9_\-\.])+\@ves.ac.in$/;
+      var messageDisplay=document.querySelector("#message");
+
+      if (!filter.test(email.value)) {
+      // alert('Please provide a VES email address');
+      messageDisplay.textContent="Please enter a valid VES Email-ID.";
+      email.textContent=" ";  
+      email.focus;
+      return false;
+ }
+     else{
+      messageDisplay.textContent="";
+     }
+}
 </script>
+<style type="text/css">
+  #message{
+    color: red;
+  }
+</style>
+
 
 </head>
 
@@ -36,8 +59,8 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
-<!--         <span class="icon-bar"></span>
-        <span class="icon-bar"></span> -->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">Asset Manager</a>
     </div>
@@ -82,11 +105,12 @@
                 <form>
                   <div class="form-group">
                     <label for="inputEmail">Email</label>
-                    <input class="form-control" placeholder="Login Email" type="text" id="inputEmail" required="true">
+                    <input class="form-control" placeholder="Login Email" type="text" id="inputEmail" required="true" />
                   </div>
+                  <span id="message"></span>  
                   <div class="form-group">
                     <label for="inputUsername">Username</label>
-                    <input type="text" id="inputUsername" placeholder="Login Username" class="form-control" required="true">
+                    <input type="text" id="inputUsername" placeholder="Login Username" class="form-control" required="true" />
                   </div>
                   <div class="form-group">
                     <label for="designation">Designation</label>
@@ -117,7 +141,7 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button class="btn btn-primary" id="signUp">Sign up</button>
+                <button class="btn btn-primary" id="signUp" onclick='Javascript:checkEmail();'>Sign up</button>
                 <button class="btn btn-primary" data-dismiss="modal">Close</button>
               </div>
             </div>            
