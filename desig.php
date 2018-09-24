@@ -80,6 +80,11 @@ h1{
 				number: numberProduct
 			});
 		});
+	$("#track").click(function(){
+			$.post("assetTracking.php", function(data,status){
+				$("#trackHere").html(data);
+			});
+		});
 
 </script>
 
@@ -113,7 +118,7 @@ h1{
 
 <div class="sidenav">
   <a href="#" data-target="#loginModal" data-toggle="modal">Make Demand</a>
-  <a href="#" data-target="" data-toggle="">Track Indent</a>
+  <a href="#" data-target="" data-toggle="" id="track">Track Indent</a>
   <a href="#">Transfer Asset</a>
   <a href="#" data-target="#maintenance" data-toggle="modal">Maintenance</a>
 </div>
@@ -121,6 +126,7 @@ h1{
 <div class="main">
 	<div class="container">
 	<h1>Logged In As Staff</h1>
+	<span id="trackHere"></span>
 	</div>
 </div>    
 <div class="container">
